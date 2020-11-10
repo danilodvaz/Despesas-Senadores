@@ -1,0 +1,14 @@
+<table mat-table [dataSource]="resumoDespesa" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Despesa </th>
+        <td mat-cell *matCellDef="let despesa"> {{despesa.id | tipoDespesa}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="valor">
+        <th mat-header-cell *matHeaderCellDef> Valor </th>
+        <td mat-cell *matCellDef="let despesa"> {{despesa.valor | number:'1.2-2'}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['id', 'valor']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['id', 'valor'];"></tr>
+</table>
